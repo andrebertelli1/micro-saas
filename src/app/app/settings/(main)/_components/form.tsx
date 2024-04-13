@@ -47,8 +47,8 @@ export function ProfileForm({ defaultValues }: ProfileFormProps) {
     router.refresh()
 
     toast({
-      title: 'Profile updated',
-      description: 'Your profile has been updated successfully',
+      title: 'Perfil atualizado',
+      description: 'Seu perfil foi atualizado com sucesso',
     })
   })
 
@@ -57,8 +57,10 @@ export function ProfileForm({ defaultValues }: ProfileFormProps) {
       <form onSubmit={onSubmit} className="space-y-8">
         <Card>
           <CardHeader>
-            <CardTitle>Name</CardTitle>
-            <CardDescription>This is your public display name.</CardDescription>
+            <CardTitle>Nome</CardTitle>
+            <CardDescription>
+              Este é o seu nome de exibição público.
+            </CardDescription>
           </CardHeader>
           <CardContent>
             <FormField
@@ -66,9 +68,9 @@ export function ProfileForm({ defaultValues }: ProfileFormProps) {
               name="name"
               render={({ field }) => (
                 <FormItem>
-                  <FormLabel>Name</FormLabel>
+                  <FormLabel>Nome</FormLabel>
                   <FormControl>
-                    <Input placeholder="Enter your name" {...field} />
+                    <Input placeholder="Digite seu nome" {...field} />
                   </FormControl>
                   <FormMessage />
                 </FormItem>
@@ -81,7 +83,8 @@ export function ProfileForm({ defaultValues }: ProfileFormProps) {
           <CardHeader>
             <CardTitle>Email</CardTitle>
             <CardDescription>
-              Please contact email contato@micro-saas.com to change your email.
+              Por favor, entre em contato pelo email contato@micro-saas.com para
+              alterar seu email.
             </CardDescription>
           </CardHeader>
           <CardContent>
@@ -92,7 +95,7 @@ export function ProfileForm({ defaultValues }: ProfileFormProps) {
                 <FormItem>
                   <FormLabel>Email</FormLabel>
                   <FormControl>
-                    <Input placeholder="Enter your email" readOnly {...field} />
+                    <Input placeholder="Digite seu email" readOnly {...field} />
                   </FormControl>
                   <FormMessage />
                 </FormItem>
@@ -103,8 +106,8 @@ export function ProfileForm({ defaultValues }: ProfileFormProps) {
 
         <SheetFooter>
           <Button disabled={form.formState.isLoading} type="submit">
-            {form.formState.isSubmitting && 'Saving...'}
-            {!form.formState.isSubmitting && 'Save changes'}
+            {form.formState.isSubmitting && 'Salvando...'}
+            {!form.formState.isSubmitting && 'Salvar alterações'}
           </Button>
         </SheetFooter>
       </form>

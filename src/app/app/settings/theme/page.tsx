@@ -1,3 +1,5 @@
+import { ThemeForm } from './_components/form'
+
 export default async function Page() {
-  return <h1>Settings / Theme</h1>
+  return <ThemeForm />
 }
